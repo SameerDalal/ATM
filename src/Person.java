@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Person{
 
-     public String name;
-     int day;
-     int month;
-     int year;
+     ATM_main m = new ATM_main();
+     public static String name;
+     static int day;
+     static int month;
+     static int year;
 
 
-    ArrayList<ArrayList<String>> storeinfo = new ArrayList();
 
 
     public void setName(){
@@ -17,10 +17,6 @@ public class Person{
 
         System.out.println("What is your name?");
         name = scan.next();
-
-        ArrayList<String> nameArray = new ArrayList<String>();
-        nameArray.add(name);
-        storeinfo.add(nameArray);
     }
 
     public void setDate(){
@@ -38,18 +34,8 @@ public class Person{
 
 
     public String toString() {
-        String DOB = month + "/" + day + "/" + year;
-
-        ArrayList<String> DOBArray = new ArrayList<>();
-        DOBArray.add(DOB);
-        storeinfo.add(DOBArray);
-
-        return month + "/" + day + "/" + year;
+        return "DOB: " +  month + "/" + day + "/" + year + "\nName: " + name + "\n" + "Your balance: $" + m.currentBalance;
     }
 
-     public void printPersonalInfo(){
-        System.out.println(storeinfo.get(0));
-        System.out.println("Name: " + storeinfo.get(0).get(0));
 
-     }
 }

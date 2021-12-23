@@ -3,75 +3,72 @@ import java.util.Scanner;
 
 
 
-public class ATM_main extends Deposit{
+public class ATM_main {
+
+    public static int currentBalance;
 
     public static void main(String[] args){
-        System.out.println("Welcome to ATM Machine");
         starterMethod();
 
     }
 
     public static void starterMethod(){
-
-        // creating objects
-        Person p = new Person();
         Scanner scan = new Scanner(System.in);
+        System.out.println("1). Continue with ATM Machine \n2). Quit program");
+        int proceed = scan.nextInt();
 
-        System.out.println("1). New User");
-        System.out.println("2). Existing User");
-        int newUser = scan.nextInt();
-
-
-        if (newUser == 1){
-            // personal info
+        if (proceed == 1) {
             System.out.println("Welcome to ATM Machine");
+            // creating objects
+            Person p = new Person();
+            // personal info
             p.setName();
             p.setDate();
             p.toString();
-            p.printPersonalInfo();
-            System.out.println("What would you like to do next??");
+            currentBalance = 0;
             goTo();
         } else {
-            goTo();
+            System.exit(0);
         }
-
-
-
-
-        // need to check if the user is a new user or not
-
     }
+
+
     public static void goTo(){
-        Deposit d = new Deposit();
+        // objects
         Person p = new Person();
+        Withdraw w = new Withdraw();
+        Deposit d = new Deposit();
         Scanner scan = new Scanner(System.in);
 
-
-        System.out.println("1). Deposit Money");
-        System.out.println("2). Withdraw Money");
-        System.out.println("3). Transfer Money");
-        System.out.println("4). Array Profile");
-        System.out.println("5). Quit");
+        System.out.println("What would you like to do next?? \n 1). Deposit Money \n 2). Withdraw Money \n 3). Your Profile \n 4). Exit from your Account");
         int goTo = scan.nextInt();
 
         switch(goTo){
             case (1):
                 // deposit money class
-                d.depositAmount();
+                System.out.println("Amount to deposit: ");
+                int amt = scan.nextInt();
+                d.depositAmount(amt);
                 goTo();
                 break;
             case (2):
-                // withdraw money class
+                if (currentBalance <= 0){
+                    System.out.println("You need to have some balance before you can withdraw!!");
+                    goTo();
+                } else {
+                    System.out.println("Amount to withdraw: ");
+                    int amt1 = scan.nextInt();
+                    w.Withdraw(amt1);
+                    goTo();
+                }
                 break;
             case (3):
-                // transfer money class
+                // access profile class
+                System.out.println(p.toString());
+                goTo();
                 break;
             case (4):
-                // access profile class
-                p.printPersonalInfo();
-                break;
-            case (5):
-                // quit program
+                starterMethod();
                 break;
         }
     }
