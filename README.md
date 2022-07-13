@@ -5,21 +5,27 @@ This is a simple ATM machine that allows you to add or subtract money in your ac
 * Enter Personal Information
   * Name
   * DOB
+
+<img src="img/atm1.PNG">
+
 * Deposit Money
   * Enter Amount
+
+<img src="img/atm2.PNG">
+
 * Withdraw Money
   * Enter Amount
+
+<img src="img/atm3.PNG">
+
 * Access your Profile
   * DOB
   * Name
   * Your Balance
-* Exit from your Account 
-
-<img src="img/atm1.PNG">
-
-<img src="img/atm2.PNG">
-
-<img src="img/atm3.PNG">
 
 <img src="img/atm4.PNG">
+
+* Exit from your Account 
+
+
 
