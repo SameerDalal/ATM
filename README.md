@@ -1,6 +1,14 @@
 # ATM
 This is a simple ATM machine that allows you to add or subtract money in your account. Using the profile menu you can access all your personal information that is associated with that account.
 
+# Functions
+* Enter Personal Information
+  * Name
+  * DOB
+* Deposit Money
+* Withdraw Money
+* Access your Profile
+* Exit from your Account 
 
 <img src="img/atm1.PNG">
 
